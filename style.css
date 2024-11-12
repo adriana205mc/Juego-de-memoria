@@ -1,0 +1,143 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+@font-face{
+   font-family: 'scoobydoo';
+   src: url(fuente/scoobydoo.ttf);
+   font-weight: bold;
+   font-style: bold;
+}
+
+body {
+   background: url(img/fondo.png) no-repeat center center/cover;
+   overflow: hidden;
+   overflow-y: auto;
+   position: relative;
+}
+
+body::after{
+   background-color: rgba(0, 0, 0, 0.6);
+   content: "";
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: -1;
+}
+
+h1{
+   text-align: center;
+   color: white;
+   font-size: 2.5rem;
+   margin-top: 20px;
+   font-family: Arial, sans-serif;
+   padding-top: 1rem;
+   font-family: 'scoobydoo';
+}
+
+#wrapper {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   position: relative;
+   min-height: 100%;
+   min-height: 100%;
+}
+
+#game {
+   flex: 1;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   max-height: 700px;
+   overflow-y: auto;
+   margin-top: 10%;
+}
+
+#stats {
+   color: white;
+   position: absolute;
+   padding: 1rem;
+   text-align: center;
+   width: calc(100% - 2rem);
+   font-size: 30px;
+   top: 5%;
+   left: 50%;
+   transform: translateX(-50%);
+   z-index: 2;
+   margin-top: 2rem;
+}
+
+.card {
+   width: 100px;
+   height: 140px;
+   margin: 1rem;
+   position: relative;
+   transition: transform 0.5s;
+   transform-style: preserve-3d;
+}
+
+.card.active {
+   transform: rotateY(180deg);
+}
+
+.card div {
+   width: 100%;
+   height: 100%;
+   border-radius: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   backface-visibility: hidden;
+   pointer-events: none;
+}
+
+.card .face {
+   transform: rotateY(180deg);
+   font-size: 6rem;
+   border: 3px solid #ffffff;
+}
+
+.card .back {
+   border: 3px solid #ffffff;
+   background: url(img/img7.png);
+}
+
+.repeatButton {
+   padding: 20px;
+   margin: 20px;
+   background-color: #f5724b;
+   font-size: 30px;
+   font-weight: bold;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   display: none;
+   cursor: pointer;
+   position: absolute;
+   top: 2%;
+   right: 0;
+   z-index: 3;
+   font-family: 'scoobydoo';
+}
+
+.repeatButton:hover {
+   cursor: pointer;
+}
+
+#timeCounter {
+   color: white;
+   position: absolute;
+   top: 5%;
+   left: 2%;
+   font-size: 2rem;
+   z-index: 2;
+}
