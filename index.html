@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de memoria</title>
+    <title>Juego de Memoria</title>
+    <link rel="icon" type="image/icon" href="img/logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,13 +13,18 @@
     <!-- Área de estadísticas para mostrar intentos -->
     <div id="stats">0 intentos</div>
     <!-- Botón para reiniciar el juego -->
-    <button class="repeatButton">Repeat</button>
+    <button class="repeatButton">Repetir</button>
 
     <div id="wrapper">
         <div id="game"></div>
     </div>
 
-    <div id="timeCounter"></div>
+    <div id="timeCounter">00:00:00</div>
+
+    <audio id="music" loop autoplay>
+        <source src="Scooby Doo, Where Are You.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento audio.
+    </audio>
     
     <script src="main.js"></script>
 </body>
