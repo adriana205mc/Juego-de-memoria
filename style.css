@@ -163,14 +163,14 @@ h1 {
   #stats {
     font-size: 20px;
     padding: 0.5rem;
-    top: 10%;
+    top: 5%;
     left: 50%;
     transform: translateX(-50%);
   }
 
   #timeCounter {
     font-size: 5vh;
-    top: 15%;
+    top: 10%;
     left: 5%;
   }
 }
