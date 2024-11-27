@@ -154,10 +154,12 @@ h1 {
   }
 
   .card {
-    width: 80px;
-    height: 120px;
-    margin-bottom: 10px;
-    font-size: 4rem;
+    width: 100px;
+    height: 140px;
+    margin: 1rem;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
   }
 
   #stats {
