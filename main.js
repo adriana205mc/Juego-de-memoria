@@ -142,6 +142,4 @@ function playMusic() {
     });
 }
 
-window.onload = () => {
-    setTimeout(playMusic, 2000);
-  };
+window.addEventListener('click', playMusic);
