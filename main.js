@@ -68,7 +68,7 @@ function activate(e) {
                 if (selectedCards[0].querySelector('.face').style.backgroundImage === selectedCards[1].querySelector('.face').style.backgroundImage) {
                     selectedCards = [];
                     currentMove = 0;
-                    
+
                     if (document.querySelectorAll('.card.active').length === totalCards) {
                         gameFinished = true;
                         stopTimer();
