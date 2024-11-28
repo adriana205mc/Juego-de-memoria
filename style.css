@@ -169,7 +169,9 @@ h1 {
   }
 
   #timeCounter {
-    font-size: 1rem;
+    font-size: 2.5vw;
+    margin-top: 0.5rem;
+    text-align: center;
   }
 }
 
