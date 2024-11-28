@@ -164,6 +164,7 @@ h1 {
     top: 2%;
     left: 50%;
     transform: translateX(-50%);
+    margin: 40px;
   }
 
   #timeCounter {
@@ -198,7 +199,7 @@ h1 {
   }
 
   #timeCounter {
-    font-size: 4vh;
+    font-size: 20px;
     top: 8%;
     left: 5%;
   }
