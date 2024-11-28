@@ -142,6 +142,37 @@ h1 {
   z-index: 2;
 }
 
+@media screen and (max-width: 400px) {
+  h1 {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+    margin-bottom: 15px; /* Ajusta el margen inferior */
+  }
+
+  #game {
+    margin-top: 3%; /* Reduce el margen superior */
+  }
+
+  .card {
+    width: 80px; /* Disminuye el ancho de la tarjeta */
+    height: 120px; /* Disminuye la altura de la tarjeta */
+    margin: 0.5rem; /* Ajusta el margen alrededor de la tarjeta */
+  }
+
+  #stats {
+    font-size: 18px; /* Tamaño de fuente más pequeño para estadísticas */
+    padding: 0.3rem; /* Ajusta el relleno */
+    top: 3%; /* Cambia la posición superior */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #timeCounter {
+    font-size: 4vh; /* Tamaño de fuente más pequeño para el contador de tiempo */
+    top: 8%; /* Cambia la posición superior */
+    left: 5%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   h1 {
     font-size: 2rem;
