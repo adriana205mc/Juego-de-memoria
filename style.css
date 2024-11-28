@@ -144,31 +144,31 @@ h1 {
 
 @media screen and (max-width: 400px) {
   h1 {
-    font-size: 1.5rem; /* Tamaño de fuente más pequeño para pantallas pequeñas */
-    margin-bottom: 15px; /* Ajusta el margen inferior */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
   }
 
   #game {
-    margin-top: 3%; /* Reduce el margen superior */
+    margin-top: 3%;
   }
 
   .card {
-    width: 80px; /* Disminuye el ancho de la tarjeta */
-    height: 120px; /* Disminuye la altura de la tarjeta */
-    margin: 0.5rem; /* Ajusta el margen alrededor de la tarjeta */
+    width: 80px;
+    height: 120px;
+    margin: 0.5rem;
   }
 
   #stats {
-    font-size: 18px; /* Tamaño de fuente más pequeño para estadísticas */
-    padding: 0.3rem; /* Ajusta el relleno */
-    top: 3%; /* Cambia la posición superior */
+    font-size: 18px;
+    padding: 0.3rem;
+    top: 3%;
     left: 50%;
     transform: translateX(-50%);
   }
 
   #timeCounter {
-    font-size: 4vh; /* Tamaño de fuente más pequeño para el contador de tiempo */
-    top: 8%; /* Cambia la posición superior */
+    font-size: 4vh;
+    top: 8%;
     left: 5%;
   }
 }
