@@ -47,7 +47,6 @@ h1 {
   justify-content: flex-start;
   position: relative;
   min-height: 100%;
-  min-height: 100%;
 }
 
 #game {
@@ -144,36 +143,94 @@ h1 {
 }
 
 @media screen and (max-width: 400px) {
-  h1 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-  }
-
-  #wrapper {
-    margin: 10vh 0;
-  }
-
   #game {
-    margin-top: calc(40px + 1rem);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px; 
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    max-width: 100%;
+    margin: auto;
   }
 
   .card {
-    width: 60px;
-    height: 90px;
-    margin: 0.3rem;
+    width: 40px;
+    height: 80px; 
+    perspective: 1000px;
+    border: solid;
+  }
+
+  .card div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card .face {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+  }
+
+  .card .front, .card .back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+  }
+
+  .card .back {
+    transform: rotateY(180deg);
+  }
+
+  .card {
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+
+  .card.active {
+    transform: rotateY(180deg);
+  }
+
+  h1 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    text-align: center;
   }
 
   #stats {
-    font-size: 16px;
-    padding: 0.3rem;
+    font-size: 12px;
+    padding: 0.4rem;
   }
 
   #timeCounter {
-    font-size: 2.5vw;
+    font-size: 2rem;
     margin-top: 0.5rem;
     text-align: center;
   }
+
+  #wrapper {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    min-height: auto;
+  }
 }
+
+
 
 @media screen and (max-width: 600px) {
   h1 {
