@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de memoria</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/icon" href="img/logo.png">
+  </head>
+  <body>
+    <div class="juego">
+      <div class="encabezado">
+        <h1>Scooby-Doo!</h1>
+        <div id="timeCounter">00:00:00</div>
+        <div class="header-controls">
+          <div class="parejas">
+            <h2>Parejas Encontradas: <span id="contador">0/6</span></h2>
+          </div>
+          <div class="audio-control">
+            <audio id="audio" src="Scooby Doo, Where Are You.mp3" loop></audio>
+            <button id="toggle-audio">
+              <img id="audio-icon" src="svg/full.svg" alt="Icono de audio" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="cards">
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img1.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img2.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img3.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img4.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img5.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img6.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img1.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img2.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img3.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img4.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img5.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+          <div class="card">
+            <div class="view front-view">
+              <img src="img/img6.png" alt="" />
+            </div>
+            <div class="view back-view">
+              <img src="img/img7.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

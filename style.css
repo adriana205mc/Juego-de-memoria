@@ -1,0 +1,536 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: scoobydoo;
+  src: url(fuente/scoobydoo.ttf);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url(img/fondo.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.juego {
+  display: flex;
+  justify-content: space-between;
+}
+
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+h1 {
+  font-family: scoobydoo;
+  color: #fff;
+  font-weight: bold;
+  margin: 0;
+}
+
+#timeCounter {
+  color: #fff;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.header-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.parejas {
+  color: #fff;
+  margin-left: 450px;
+}
+
+#toggle-audio {
+  background-color: #f88644;
+  border: 1px solid #fff;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 450px;
+  cursor: pointer;
+}
+
+/* Cartas */
+
+.container {
+  margin-top: 40px;
+  height: 400px;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.cards {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.card {
+  position: relative;
+  height: calc(100% / 4 - 10px);
+  width: calc(100% / 4 - 10px);
+  cursor: pointer;
+}
+
+.view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front-view {
+  transform: rotateY(180deg);
+}
+
+.back-view {
+  transform: rotateY(0deg);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+}
+
+.front-view,
+.back-view {
+  transition: transform 0.5s;
+}
+
+.card.active .front-view {
+  transform: rotateY(0deg);
+}
+
+.card.active .back-view {
+  transform: rotateY(-180deg);
+}
+
+@media (max-width: 500px) {
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 70vw;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+  }
+
+  .card {
+    position: relative;
+    width: 45px !important;
+    height: 70px !important;
+    aspect-ratio: 2 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  .card img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100vw !important;
+    background-size: cover;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 60vw !important;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  .card {
+    position: relative;
+    width: 45px !important;
+    height: 70px !important;
+    aspect-ratio: 2 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  .view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .card img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 300px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100vw !important;
+  }
+
+  .container {
+    width: 80vw !important;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+  }
+
+  .card {
+    width: 35px !important;
+    height: 50px !important;
+    aspect-ratio: 2 / 4;
+  }
+
+  .card img {
+    height: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    overflow-x: hidden;
+  }
+
+  .encabezado {
+    margin-top: 20px;
+    padding: 5px 10px;
+  }
+  
+  .parejas {
+    color: #fff;
+    margin-left: 70px;
+    font-size: 9px;
+  }
+  
+  #toggle-audio {
+    background-color: #f88644;
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 70px;
+  }
+
+  /* Cartas */
+
+  .container {
+    width: 60vw !important;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+  }
+
+  .card {
+    position: relative;
+    width: 45px !important;
+    height: 70px !important;
+    aspect-ratio: 2 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  .card img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100vw !important;
+    background-size: cover;
+    overflow-x: hidden;
+  }
+  
+  .parejas {
+    color: #fff;
+    margin-left: 70px;
+    font-size: 9px;
+  }
+  
+  #toggle-audio {
+    background-color: #f88644;
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 70px;
+  }
+
+  /* Cartas */
+
+  .container {
+    width: 60vw !important;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    width: 100%;
+  }
+
+  .card {
+    position: relative;
+    width: 45px !important;
+    height: 70px !important;
+    aspect-ratio: 2 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  .view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .card img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 300px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+    width: 100vw !important;
+  }
+
+  .parejas {
+    color: #fff;
+    margin-left: 30px;
+    font-size: 8px;
+  }
+  
+  #toggle-audio {
+    background-color: #f88644;
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 30px;
+  }
+
+  /* Cartas */
+
+  .container {
+    width: 80vw !important;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+  }
+
+  .card {
+    width: 35px !important;
+    height: 50px !important;
+    aspect-ratio: 2 / 4;
+  }
+
+  .card img {
+    height: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+  }
+
+  .container {
+    width: 50%;
+    max-width: 90vw;
+    height: 50%;
+    max-height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    max-width: 100px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+  }
+
+  .view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
