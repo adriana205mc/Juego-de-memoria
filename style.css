@@ -14,8 +14,8 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-  url(img/fondo.png) no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(img/fondo.png) no-repeat center center fixed;
   background-size: cover;
 }
 
@@ -146,161 +146,17 @@ h1 {
     overflow-x: hidden;
   }
 
-  .container {
-    width: 70vw;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    width: 100%;
-  }
-
-  .card {
-    position: relative;
-    width: 45px !important;
-    height: 70px !important;
-    aspect-ratio: 2 / 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    background-color: transparent;
-    overflow: hidden;
-  }
-
-  .card img {
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-}
-
-@media (max-width: 400px) {
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 100vh;
-    width: 100vw !important;
-    background-size: cover;
-    overflow-x: hidden;
-  }
-
-  .container {
-    width: 60vw !important;
-    padding: 10px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    width: 100%;
-  }
-
-  .card {
-    position: relative;
-    width: 45px !important;
-    height: 70px !important;
-    aspect-ratio: 2 / 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    background-color: transparent;
-    overflow: hidden;
-  }
-
-  .view {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
-
-  .card img {
-    width: auto;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-}
-
-@media (max-width: 300px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 100vh;
-    width: 100vw !important;
-  }
-
-  .container {
-    width: 80vw !important;
-    padding: 5px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 5px;
-  }
-
-  .card {
-    width: 35px !important;
-    height: 50px !important;
-    aspect-ratio: 2 / 4;
-  }
-
-  .card img {
-    height: 100%;
-  }
-}
-
-@media (max-width: 500px) {
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    overflow-x: hidden;
-  }
-
   .encabezado {
     margin-top: 20px;
     padding: 5px 10px;
   }
-  
+
   .parejas {
     color: #fff;
-    margin-left: 70px;
-    font-size: 9px;
+    margin-left: 80px;
+    font-size: 17px;
   }
-  
+
   #toggle-audio {
     background-color: #f88644;
     border: 1px solid #fff;
@@ -312,10 +168,11 @@ h1 {
   /* Cartas */
 
   .container {
-    width: 60vw !important;
+    width: 80vw !important;
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin: 10px;
   }
 
   .cards {
@@ -327,8 +184,8 @@ h1 {
 
   .card {
     position: relative;
-    width: 45px !important;
-    height: 70px !important;
+    width: 75px !important;
+    height: 100px !important;
     aspect-ratio: 2 / 4;
     display: flex;
     justify-content: center;
@@ -359,13 +216,13 @@ h1 {
     background-size: cover;
     overflow-x: hidden;
   }
-  
+
   .parejas {
     color: #fff;
     margin-left: 70px;
-    font-size: 9px;
+    font-size: 15px;
   }
-  
+
   #toggle-audio {
     background-color: #f88644;
     border: 1px solid #fff;
@@ -377,7 +234,7 @@ h1 {
   /* Cartas */
 
   .container {
-    width: 60vw !important;
+    width: 80vw !important;
     padding: 10px;
     background: #fff;
     border-radius: 10px;
@@ -398,8 +255,8 @@ h1 {
 
   .card {
     position: relative;
-    width: 45px !important;
-    height: 70px !important;
+    width: 65px !important;
+    height: 90px !important;
     aspect-ratio: 2 / 4;
     display: flex;
     justify-content: center;
@@ -437,9 +294,9 @@ h1 {
   .parejas {
     color: #fff;
     margin-left: 30px;
-    font-size: 8px;
+    font-size: 15px;
   }
-  
+
   #toggle-audio {
     background-color: #f88644;
     border: 1px solid #fff;
@@ -464,8 +321,8 @@ h1 {
   }
 
   .card {
-    width: 35px !important;
-    height: 50px !important;
+    width: 45px !important;
+    height: 60px !important;
     aspect-ratio: 2 / 4;
   }
 
